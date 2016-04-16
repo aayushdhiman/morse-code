@@ -113,10 +113,8 @@ def text2morse(code, morse):
             morse.append('--..')
         elif i == ' ':
             morse.append(' ')
-#    return morse
     sol = ' / '.join(morse) + ' / '
     return sol
-
 
 # Main Program
 lis = []
