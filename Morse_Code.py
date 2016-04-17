@@ -56,7 +56,6 @@ def morse2text(code, text):
     return sol
 
 
-
 def text2morse(code, morse):
     for i in code:
         if i == 'A':
@@ -113,12 +112,22 @@ def text2morse(code, morse):
             morse.append('--..')
         elif i == ' ':
             morse.append(' ')
-    sol = ' / '.join(morse) + ' / '
+    sol = '/'.join(morse) + '/ '
     return sol
 
-# Main Program
+
+def printing(v, var1):
+    if v == 'M':
+        inputs = input('Enter a Morse Code message to translate to text, with each character separated by a /: ')
+        inputted = [i for i in inputs.split('/')]
+        return inputs + ' in regular text is the letter/word ' + str(morse2text(inputted, var1))
+    elif v == 'T':
+        inputs = input('Enter a text message to translate to Morse Code, with each character separated by a /: ')
+        inputted = [i for i in inputs.split('/')]
+        return inputs + ' in regular text is the letter/word ' + str(text2morse(inputted, var1))
+
+
 lis = []
 print('Welcome to the Morse Code Translator.')
-inputs = input('Enter a text message to translate to morse code, each letter seperated by /: ')
-inputted = [i for i in inputs.split('/')]
-print(inputs + ' in regular text is the letter/word ' + str(text2morse(inputted, lis)))
+x = input('Enter M to convert from Morse Code into text or T to convert from text to Morse Code:')
+print(printing(x, lis))
